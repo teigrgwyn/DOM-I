@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br> Is<br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -37,6 +37,33 @@ const siteContent = {
   },
 };
 
+/* ==========
+  Header
+========== */
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+// add navbar
+let navbar = document.querySelectorAll('header nav a');
+navbar.forEach((item, i) => item.textContent = siteContent["nav"]["nav-item-"+`${i+1}`]); // one-liner
+
+/* ==========
+    Call to Action Section (Title)
+========== */
+
+document.querySelector('.cta .cta-text h1').innerHTML = siteContent["cta"]["h1"];
+document.querySelector('.cta .cta-text button').textContent = siteContent["cta"]["button"];
+document.querySelector('.cta #cta-img').setAttribute('src', siteContent["cta"]["img-src"]);
+
+/* ==========
+    Main Content
+========== */
+
+
+
+/* ==========
+    Contact Section
+========== */
+
